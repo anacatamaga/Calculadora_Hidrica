@@ -4,75 +4,38 @@ Aqui podes calcular a quantidade mínima de água necessária no teu dia a dia!
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de Consumo de Água</title>
+    <title>Calculadora de Hidratação</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .container {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 300px;
-        }
-        h1 {
             text-align: center;
+            padding: 20px;
         }
         input, button {
-            width: 100%;
+            margin: 10px;
             padding: 10px;
-            margin: 10px 0;
             font-size: 16px;
-        }
-        button {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
-        .result {
-            font-size: 18px;
-            font-weight: bold;
-            text-align: center;
         }
     </style>
 </head>
 <body>
+    <h1>Calculadora de Hidratação</h1>
+    <p>Insere o teu peso (em kg) para descobrir quanta água deves beber por dia:</p>
+    <input type="number" id="peso" placeholder="Peso em kg">
+    <button onclick="calcularAgua()">Calcular</button>
+    <p id="resultado"></p>
 
-<div class="container">
-    <h1>Calculadora de Água</h1>
-    <label for="weight">Digite seu peso (kg):</label>
-    <input type="number" id="weight" placeholder="Peso em kg" required>
-    <button onclick="calculateWater()">Calcular</button>
-    <div id="result" class="result"></div>
-</div>
-
-<script>
-    function calculateWater() {
-        var weight = document.getElementById("weight").value;
-        if (weight <= 0) {
-            document.getElementById("result").innerHTML = "Por favor, insira um peso válido!";
-            return;
+    <script>
+        function calcularAgua() {
+            const peso = document.getElementById('peso').value;
+            if (peso) {
+                const aguaDiaria = peso * 35; // 35 ml por kg
+                document.getElementById('resultado').innerText = `Deves beber cerca de ${aguaDiaria} ml de água por dia.`;
+            } else {
+                document.getElementById('resultado').innerText = "Por favor, insere o teu peso.";
+            }
         }
-
-        // A recomendação geral é beber 35 ml de água por kg de peso
-        var waterAmount = weight * 35;
-        
-        // Exibir o resultado
-        document.getElementById("result").innerHTML = "Você deve beber aproximadamente " + waterAmount + " ml de água por dia.";
-    }
-</script>
-
+    </script>
 </body>
 </html>
+
