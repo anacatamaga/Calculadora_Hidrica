@@ -1,6 +1,5 @@
-# quantidadehidrica
-Aqui podes calcular a quantidade mínima de água necessária no teu dia a dia  
-<!DOCTYPE html>
+Aqui podes calcular a quantidade mínima de água necessária no teu dia a dia!  
+
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
